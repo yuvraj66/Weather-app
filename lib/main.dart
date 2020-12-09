@@ -56,7 +56,7 @@ class _HomeState extends State<Home> {
           title: Container(
             padding: EdgeInsets.all(5),
             decoration: BoxDecoration(
-              color: Colors.grey[300],
+              color: Colors.white,
               borderRadius: BorderRadius.circular(10),
             ),
             child: TextField(
@@ -93,12 +93,15 @@ class _HomeState extends State<Home> {
             children: [
               Column(
                 children: [
-                  Text(
-                    "Biratnagar,Nepal",
-                    style: TextStyle(
-                      fontSize: 40.0,
-                      color: Colors.white,
-                      fontWeight: FontWeight.normal,
+                  SizedBox(
+                    height: 20,
+                    child: Text(
+                      "Biratnagar,Nepal",
+                      style: TextStyle(
+                        fontSize: 40.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.normal,
+                      ),
                     ),
                   ),
                   Text(
@@ -122,55 +125,60 @@ class _HomeState extends State<Home> {
                       borderRadius: BorderRadius.circular(20),
                       color: Colors.white,
                     ),
-                    child: ListView(
-                      children: [
-                        ListTile(
-                          leading: FaIcon(FontAwesomeIcons.thermometerHalf),
-                          title: Text(
-                            "Temprature",
-                            style: TextStyle(color: Colors.black),
+                    child: SizedBox(
+                      height: 10,
+                      child: ListView(
+                        children: [
+                          ListTile(
+                            leading: FaIcon(FontAwesomeIcons.thermometerHalf),
+                            title: Text(
+                              "Temprature",
+                              style: TextStyle(color: Colors.black),
+                            ),
+                            trailing: Text(
+                              temp != null ? temp.toString() + "°" : "Loading",
+                              style: TextStyle(color: Colors.black),
+                            ),
                           ),
-                          trailing: Text(
-                            temp != null ? temp.toString() + "°" : "Loading",
-                            style: TextStyle(color: Colors.black),
+                          ListTile(
+                            leading: FaIcon(FontAwesomeIcons.cloud),
+                            title: Text(
+                              "Weather",
+                              style: TextStyle(color: Colors.black),
+                            ),
+                            trailing: Text(
+                              desc != null ? desc.toString() : "Loading",
+                              style: TextStyle(color: Colors.black),
+                            ),
                           ),
-                        ),
-                        ListTile(
-                          leading: FaIcon(FontAwesomeIcons.cloud),
-                          title: Text(
-                            "Weather",
-                            style: TextStyle(color: Colors.black),
+                          ListTile(
+                            leading: FaIcon(FontAwesomeIcons.sun),
+                            title: Text(
+                              "Humidity",
+                              style: TextStyle(color: Colors.black),
+                            ),
+                            trailing: Text(
+                              humidity != null
+                                  ? humidity.toString()
+                                  : "Loading",
+                              style: TextStyle(color: Colors.black),
+                            ),
                           ),
-                          trailing: Text(
-                            desc != null ? desc.toString() : "Loading",
-                            style: TextStyle(color: Colors.black),
+                          ListTile(
+                            leading: FaIcon(FontAwesomeIcons.wind),
+                            title: Text(
+                              "WindSpeed",
+                              style: TextStyle(color: Colors.black),
+                            ),
+                            trailing: Text(
+                              windSpeed != null
+                                  ? windSpeed.toString()
+                                  : "Loading",
+                              style: TextStyle(color: Colors.black),
+                            ),
                           ),
-                        ),
-                        ListTile(
-                          leading: FaIcon(FontAwesomeIcons.sun),
-                          title: Text(
-                            "Humidity",
-                            style: TextStyle(color: Colors.black),
-                          ),
-                          trailing: Text(
-                            humidity != null ? humidity.toString() : "Loading",
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                        ListTile(
-                          leading: FaIcon(FontAwesomeIcons.wind),
-                          title: Text(
-                            "WindSpeed",
-                            style: TextStyle(color: Colors.black),
-                          ),
-                          trailing: Text(
-                            windSpeed != null
-                                ? windSpeed.toString()
-                                : "Loading",
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.weatherapp">
+    package="com.example.bug">
    <application
-        android:label="weatherapp"
+        android:label="bug"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
@@ -37,6 +37,5 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-             <uses-permission android:name="android.permission.INTERNET" />
     </application>
 </manifest>
